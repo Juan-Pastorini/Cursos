@@ -1,4 +1,19 @@
 {
+  "name": "cursos-root",
+  "version": "1.0.0",
+  "description": "Root for online courses platform",
+  "scripts": {
+    "api:install": "npm install --prefix cursos/api",
+    "ui:install": "npm install --prefix cursos/ui",
+    "install-all": "npm install && npm run api:install && npm run ui:install",
+    "api:dev": "npm run dev --prefix cursos/api",
+    "ui:dev": "npm run dev --prefix cursos/ui",
+    "dev": "concurrently \"npm run api:dev\" \"npm run ui:dev\"",
+    "start-all": "npm run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
   "dependencies": {
     "mongoose": "^9.1.5"
   }
