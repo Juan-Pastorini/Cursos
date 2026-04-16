@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+/* ============================================
+   DESIGN SYSTEM - PREMIUM UPGRADE
+   ============================================ */
+
+:root {
+  /* Colors - Deep & Professional */
+  --primary-rgb: 139, 92, 246;
+  --accent-rgb: 34, 211, 238;
+
+  --background: #ffffff;
+  --foreground: #020617;
+
+  /* Slate Scale */
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --slate-900: #0f172a;
+  --slate-950: #020617;
+
+  /* Gradients */
+  --gradient-main: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+  --gradient-surface: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.dark {
+  --background: #020617;
+  --foreground: #f8fafc;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), 'Inter', system-ui, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+/* ============================================
+   GLASSMORPHISM & EFFECTS
+   ============================================ */
+
+.glass-dark {
+  background: rgba(2, 6, 23, 0.7);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.gradient-text {
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.shadow-premium {
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-glow {
+  box-shadow: 0 0 30px rgba(var(--primary-rgb), 0.3);
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.btn {
+  @apply relative inline-flex items-center justify-center px-8 py-4 rounded-2xl font-bold transition-all duration-300 active:scale-95 overflow-hidden;
+}
+
+.btn-primary {
+  @apply bg-slate-900 text-white shadow-xl hover:shadow-2xl hover:-translate-y-1;
+  background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+}
+
+.btn-accent {
+  @apply text-white shadow-xl shadow-violet-500/20 hover:shadow-violet-500/40 hover:-translate-y-1;
+  background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+}
+
+.btn-secondary {
+  @apply bg-white/5 border border-white/10 text-white hover:bg-white/10;
+}
+
+.btn-sm {
+  @apply px-5 py-2.5 text-sm rounded-xl;
+}
+
+.btn-lg {
+  @apply px-10 py-5 text-lg rounded-[2rem];
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+
+  50% {
+    transform: translateY(-15px) rotate(1deg);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.mask-radial {
+  mask-image: radial-gradient(circle at center, black, transparent 80%);
+}
+
+/* ============================================
+   FORMS & INPUTS
+   ============================================ */
+
+.input {
+  @apply w-full h-14 px-6 bg-white border border-slate-200 rounded-2xl text-slate-900 placeholder:text-slate-400 outline-none transition-all duration-300 focus:border-violet-500 focus:ring-4 focus:ring-violet-500/10;
+}
+
+.input-dark {
+  @apply w-full h-14 bg-slate-900/50 border border-white/10 rounded-2xl text-white placeholder:text-slate-500 outline-none transition-all duration-300 focus:border-violet-500 focus:ring-4 focus:ring-violet-500/10;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--slate-950);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--slate-800);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--slate-700);
+}
