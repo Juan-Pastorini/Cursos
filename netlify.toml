@@ -4,14 +4,14 @@
   # Entramos a la carpeta del UI para instalar dependencias y construir
   command = "npm install --prefix cursos/ui && npm run build --prefix cursos/ui"
   
-  # Directorio donde Next.js genera la salida (estándar para Next en Netlify)
-  publish = "cursos/ui/.next"
+  # Directorio donde Next.js genera la salida estática
+  publish = "cursos/ui/out"
 
-# Redirecciones para asegurar que las rutas de Next.js funcionen al recargar
+# Redirecciones para asegurar que las rutas de Next.js funcionen al recargar en modo estático
 [[redirects]]
   from = "/*"
-  to = "/index.html"
-  status = 200
+  to = "/404.html"
+  status = 404
 
 [build.environment]
   NODE_VERSION = "20"
